@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>about nodeJS</title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <meta name="author" content="Shu Pengfei">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="css/favicon.png" />
+    <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+    <!-- Code Prettifier: -->
+<link href="css/highlight.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="css/style.css" rel="stylesheet" />
+
+
+
+  </head>
+
+  <body>
+  <div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+    <div id="impress">
+    <div class='step' = data-rotate="20" data-scale="10" data-x="1000">
+    
+<h1><center> Node.js  <center></h1>
+
+<h2><center>new option for scripting</center></h2>
+</div>
+      <div class='step' = data-rotate="20" data-scale="10" data-x="1000">
+    
+<p>Do you know ?</p>
+
+<h1><strong>JavaScript</strong></h1>
+</div>
+      <div class='step' == data-x="1000">
+    
+<h2>* 函数可以传递( 函数是一等公民 )</h2>
+
+<h2>* 封包</h2>
+
+<h2>* 不类,也能有对象</h2>
+</div>
+      <div class='step' == data-x="1000">
+    
+<p>Do you konw ?</p>
+
+<h1><strong>Node.js</strong></h1>
+</div>
+      <div class='step' == data-x="1000">
+    
+<h2>* 异步 ? =&gt; 异步IO 执行效率的提升</h2>
+
+<h2>* 异步 . =&gt; 编程方式的转变</h2>
+
+<h2>* 异步 ! =&gt; 脑洞大开</h2>
+</div>
+      <div class='step' == data-x="1000">
+    
+<p><a href="http://nodejs.org/">http://nodejs.org/</a></p>
+<pre><code class='prettyprint '>Node.js® is a platform built on Chrome's JavaScript runtime
+for easily building fast, scalable network applications.
+
+Node.js uses an event-driven, non-blocking I/O model
+that makes it lightweight and efficient,
+
+perfect for data-intensive real-time applications
+that run across distributed devices.
+</code></pre></div>
+      <div class='step' == data-x="1000">
+    
+<p>Not So slow as you think
+<img src="fastV8.png" alt="Not_slow"></p>
+</div>
+      <div class='step' == data-x="1000">
+    
+<h2>Hello X</h2>
+
+<h3>Nodejs , Tornado , Go , Netty</h3>
+
+<ul>
+<li>Nodejs: <a href="http://nodejs.org">http://nodejs.org</a></li>
+<li>Tornado: <a href="http://www.tornadoweb.org">http://www.tornadoweb.org</a></li>
+<li>Go: <a href="http://golang.org">http://golang.org</a></li>
+<li>Netty: <a href="http://www.jboss.org/netty">http://www.jboss.org/netty</a></li>
+</ul>
+
+<p>Ref: <a href="http://fengmk2.cnpmjs.org/ppt/qcon2011/#slide-5">http://fengmk2.cnpmjs.org/ppt/qcon2011/#slide-5</a></p>
+</div>
+      <div class='step' = data-rotate="20" data-scale="10" data-x="1000">
+    
+<h2>Python: Tornado</h2>
+<pre><code class='prettyprint python'>from tornado.ioloop import IOLoop
+from tornado.web import RequestHandler, \
+                        Application
+
+class MainHandler(RequestHandler):
+    def get(self):
+        self.write("Hello, world")
+
+application = Application([
+    (r"/", MainHandler),
+])
+
+if __name__ == "__main__":
+    application.listen(8080)
+    IOLoop.instance().start()
+</code></pre></div>
+      <div class='step' >
+    
+<h2>Go:</h2>
+<pre><code class='prettyprint go'>package main
+import (
+   "http"
+   "io"
+)
+func handler(w http.ResponseWriter, r *http.Request) {
+    io.WriteString(w, "Hello, world")
+}
+func main() {
+     http.HandleFunc("/", handler)
+     http.ListenAndServe(":8080", nil)
+}
+</code></pre></div>
+      <div class='step' >
+    
+<h2>Java: Netty</h2>
+<pre><code class='prettyprint java'>private void handleHttpRequest(
+        ChannelHandlerContext ctx,
+        HttpRequest req) throws Exception {
+    HttpResponse res =
+        new DefaultHttpResponse(HTTP_1_1, OK);
+    res.setHeader(CONTENT_TYPE,
+        "text/html; charset=UTF-8");
+    setContentLength(res, 11);
+    res.setContent(
+        ChannelBuffers.copiedBuffer(
+            "hello world",
+            CharsetUtil.US_ASCII));
+    sendHttpResponse(ctx, req, res);
+}
+
+</code></pre></div>
+      <div class='step' >
+    
+<h2>Nodejs:</h2>
+<pre><code class='prettyprint javascript'>var http = require('http');
+http.createServer(function(req, res){
+    res.end('Hello, World');
+}).listen(8080);
+</code></pre></div>
+      <div class='step' >
+    
+<h2>Nodejs: 4CPU</h2>
+<pre><code class='prettyprint javascript'>var cluster = require('cluster')
+  , http = require('http');
+var server =
+  http.createServer(function(req, res) {
+    res.end('Hello World');
+});
+cluster(server)
+.set('workers', 4)
+.use(cluster.stats())
+.listen(8080);
+</code></pre></div>
+      <div class='step' >
+    
+<h2>测试结果</h2>
+
+<h4>测试脚本</h4>
+
+<p><code class='inline prettyprint'>$ ab -c 30 -n 1000000 http://127.0.0.1:8080/</code></p>
+
+<h4>测试结果对比</h4>
+
+<table><thead>
+<tr>
+<th align="left">Name</th>
+<th align="right">30 threads rps</th>
+<th align="right">100 rps</th>
+<th align="right">1000 rps</th>
+<th align="center">5000 rps</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">Nodejs</td>
+<td align="right">7,287</td>
+<td align="right">7,038</td>
+<td align="right">6,786</td>
+<td align="center">6,912</td>
+</tr>
+<tr>
+<td align="left">Tornado</td>
+<td align="right">2,967</td>
+<td align="right">2,966</td>
+<td align="right">2,967</td>
+<td align="center">2,982</td>
+</tr>
+<tr>
+<td align="left">Go</td>
+<td align="right">5,214</td>
+<td align="right">5,157</td>
+<td align="right">5,080</td>
+<td align="center">5,164</td>
+</tr>
+<tr>
+<td align="left">Netty</td>
+<td align="right">13,526</td>
+<td align="right">13,351</td>
+<td align="right">11,332</td>
+<td align="center">7,921</td>
+</tr>
+<tr>
+<td align="left">Nodejs 4P</td>
+<td align="right">14,826</td>
+<td align="right">14,332</td>
+<td align="right">12,161</td>
+<td align="center">8,287</td>
+</tr>
+</tbody></table>
+
+<h1></h1>
+
+<p><a href="http://www.prahladyeri.com/2014/06/php-vs-node-js-real-statistics/">Node.js 14倍 PHP</a></p>
+
+<p><a href="http://www.prahladyeri.com/2014/06/php-vs-node-js-real-statistics/">http://www.prahladyeri.com/2014/06/php-vs-node-js-real-statistics/</a></p>
+</div>
+      <div class='step' >
+    
+<h2>性能不是关键~</h2>
+
+<h1>开发效率才是!</h1>
+<pre><code class='prettyprint javascript'>var http = require('http');
+http.createServer(function(req, res){
+    res.end('Hello, World');
+}).listen(8080);
+</code></pre></div>
+      <div class='step' >
+    
+<p>[FSS@Gitlab]&lt;&gt;</p>
+<pre><code class='prettyprint javascript'>var net = require('net');
+var server = net.createServer(function (socket) {
+  socket.write('Echo server\r\n');
+  socket.pipe(socket);
+});
+
+server.listen(1337, '127.0.0.1');
+</code></pre></div>
+      <div class='step' >
+    
+<h2><strong>Event Driven</strong></h2>
+<pre><code class='prettyprint javascript'>var net = require('net');
+var client = net.connect({port: 8124},
+    function() { //'connect' listener
+  console.log('client connected');
+  client.write('world!\r\n');
+});
+client.on('data', function(data) {
+  console.log(data.toString());
+  client.end();
+});
+client.on('end', function() {
+  console.log('client disconnected');
+});
+
+</code></pre></div>
+      <div class='step' >
+    
+<h2><strong>message Driven?</strong></h2>
+<pre><code class='prettyprint '>  INPUT get_cac_mssar_param_req_s( p_unit.ttype, p_unit.index );
+    ...
+    OUTPUT get_cac_mssar_param_ack_s (status,
+        p_unit.ttype, p_unit.index, mssar_gg1, mssar_gg3 )
+        TO g_sender, SET DELIVERY_RANGE = g_delivery,
+            SND_MSGCOPY_FROM_WO_TO_SPUP = 0;
+
+    NEXTSTATE -;
+
+</code></pre></div>
+      <div class='step' >
+    
+<h1>终于开始正题了</h1>
+</div>
+      <div class='step' >
+    
+<h2>Makefile Debug</h2>
+<pre><code class='prettyprint '>make -pn  | grep ...
+</code></pre>
+<p>or</p>
+<pre><code class='prettyprint '>make -d --dry-run
+</code></pre></div>
+      <div class='step' >
+    
+<h1><strong>seeing is believing..</strong></h1>
+</div>
+      <div class='step' >
+    
+<h2>Google</h2>
+
+<p><a href="http://plindenbaum.blogspot.jp/2012/11/visualizing-dependencies-of-makefile.html">http://plindenbaum.blogspot.jp</a></p>
+
+<p>and</p>
+
+<p><a href="https://github.com/usc-isi/make2dot">https://github.com/usc-isi/make2dot</a></p>
+</div>
+      <div class='step' >
+    
+<h2>基本原理</h2>
+
+<ul>
+<li>产生makefile debug</li>
+<li>过滤无用信息</li>
+<li>构建依赖关系</li>
+<li>输出 dep.html (angular.js 交互/ D3绘制依赖)</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<p><img src="./douglas.png" alt="douglas">
+Doug McIlroy. October 11, 1964</p>
+
+<blockquote>
+<p>&quot;We should have some ways of connecting programs like garden hose--screw in
+    another segment when it becomes necessary to massage data in
+    another way. This is the way of IO also.&quot;</p>
+</blockquote>
+<pre><code class='prettyprint '>> svn st | grep ^? | xargs  rm  -f
+</code></pre><pre><code class='prettyprint '>stream.pipe(stream2).pipe(stream3)
+
+</code></pre></div>
+      <div class='step' >
+    
+<h1>Read the code</h1>
+</div>
+      <div class='step' >
+    </div>
+      <div class='step' >
+    
+<h2>个人理解</h2>
+
+<ul>
+<li><p>talk is cheap, show me the code ( <strong>放码过来</strong> )</p></li>
+<li><p>OS make you more hard and more working hard</p></li>
+</ul>
+</div>
+      <div class='step' >
+    
+      </div>
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
+    
