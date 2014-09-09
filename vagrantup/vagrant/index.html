@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>vagrant up yo</title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <meta name="author" content="Shu Pengfei">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="css/favicon.png" />
+    <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+    <!-- Code Prettifier: -->
+<link href="css/highlight.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="css/style.css" rel="stylesheet" />
+
+
+
+  </head>
+
+  <body>
+  <div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+    <div id="impress">
+    <div class='step' = data-rotate="20" data-scale="10" data-x="1000">
+    
+<h1><center> Vagrant  <center></h1>
+
+<h2><center>new way in cooperation</center></h2>
+</div>
+      <div class='step' = data-rotate="20" data-scale="10" data-x="200">
+    
+<h2>我的电脑上是可以的啊?!</h2>
+
+<h3>真想把你的电脑要过来啊!</h3>
+</div>
+      <div class='step' == data-x="1000">
+    
+<h1>妈妈说:</h1>
+
+<h2>为人要大方一点</h2>
+
+<h2>给你就给你!</h2>
+</div>
+      <div class='step' == data-x="1000">
+    
+<h1>怎么给呢?</h1>
+</div>
+      <div class='step' == data-x="1000">
+    
+<h1>vagrant 来帮你</h1>
+
+<h2>基于虚拟机技术( virtual box)的一套命令行工具</h2>
+
+<h2>方便虚拟机 定制/发布</h2>
+
+<h1>统一协作</h1>
+</div>
+      <div class='step' == data-x="1000">
+    
+<ol>
+<li>安装 Virtual Box (VirtualBox-4.2.16-86992-Win.exe)</li>
+<li>安装 vagrant (<a href="http://www.vagrantup.com/">http://www.vagrantup.com/</a>)</li>
+<li>下载需要的boxes (<a href="http://www.vagrantbox.es/">http://www.vagrantbox.es/</a>)</li>
+<li>折腾 折腾 折腾</li>
+<li>分享</li>
+</ol>
+</div>
+      <div class='step' == data-x="1000">
+    
+<h2>基本节奏</h2>
+<pre><code class='prettyprint bash'>$ vagrant box add boxname  boxURL/Path
+$ //example
+$ vagrant box add bsd  d:/FreeBSD-8.4-i386.box
+$ cd to/your/workspace/
+$ vagrant init bsd
+$ vagrant up
+$ vagrant ssh
+</code></pre></div>
+      <div class='step' == data-x="1000">
+    
+<h2>虚拟世界</h2>
+<pre><code class='prettyprint bash'>% do sth awesomt
+% exit
+</code></pre>
+<h2>现实世界</h2>
+<pre><code class='prettyprint bash'>$ vagrant halt     // 关闭虚拟机
+$ vagrant package  // 打包虚拟机
+$ ls package.box   // 新的box 分享你的成果
+</code></pre></div>
+      <div class='step' = data-rotate="20" data-scale="10" data-x="1000">
+    
+<h1>Why</h1>
+
+<h3>0. 很久没有出来吹牛了</h3>
+
+<h3>1. 协作</h3>
+
+<h3>2. dmxsee 安装我不喜欢</h3>
+
+<h3>3. linsee 忙碌的IO, 如果能在自己搞定这个如何/ Ccheckout product</h3>
+
+<h3>4. CI server  本地过了/CI server不过.</h3>
+
+<h3>5. CI 服务器部署/异构服务器/Sandbox</h3>
+
+<h3>6. provider for mcRNC/openMGW</h3>
+</div>
+      <div class='step' >
+    
+<h1>买一送一</h1>
+
+<h2><a href="http://devdocs.io/">http://devdocs.io/</a></h2>
+
+      </div>
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
+    
