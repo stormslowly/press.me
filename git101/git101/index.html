@@ -15,8 +15,6 @@
 <script>hljs.initHighlightingOnLoad();</script>
 
     <link href="css/style.css" rel="stylesheet" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,300,400,800' rel='stylesheet' type='text/css'>    
-
 
   </head>
 
@@ -45,22 +43,95 @@
 <h1>SSH key</h1>
 
 <h2>1. ssh key</h2>
-<pre><code class='prettyprint '>$ cmds 
+<pre><code class='prettyprint bash'>$ cmds 
+</code></pre></div>
+      <div class='step' = data-rotate="20" data-x="0" data-y="200">
+    
+<h1>Identify yourself</h1>
+<pre><code class='prettyprint bash'>$ git config user.name  shu pengfei
+$ git config user.email pengfei.shu@nsn.com
 </code></pre></div>
       <div class='step' = data-rotate="20" data-x="0" data-y="200">
     
 <h1>git clone</h1>
-<pre><code class='prettyprint '>$ git clone your_repository_URL
+<pre><code class='prettyprint bash'>$ git clone your_repository_URL
 </code></pre></div>
       <div class='step' = data-rotate="20" data-x="0" data-y="200" id="status">
-    </div>
-      <div class='step' = data-rotate="20" data-x="0" data-y="200">
+    
+<h1>file status</h1>
+
+<p><img src="./git_file_status.png" alt="file status"></p>
+</div>
+      <div class='step' = data-rotate="20" data-x="0" data-y="300">
     
 <h1>git add</h1>
-<pre><code class='prettyprint '>$ git add README
+<pre><code class='prettyprint bash'>$ git add README
+$ git status 
 </code></pre></div>
-      <div class='step' >
+      <div class='step' = data-rotate="20" data-x="0" data-y="300">
     
+<p>git commit </p>
+<pre><code class='prettyprint bash'>$ git commit -m "commit the readme"
+</code></pre>
+<p>what happened after commit <a href="http://onlywei.github.io/explain-git-with-d3/#">http://onlywei.github.io/explain-git-with-d3/#</a></p>
+</div>
+      <div class='step' = data-rotate="20" data-x="0" data-y="400">
+    
+<h1>DRY</h1>
+
+<h3>don&#39;t repeat yourself</h3>
+<pre><code class='prettyprint '>$ git add .....
+$ git commit ....
+....
+
+
+$ git commit -am "all modified file will be commit" 
+</code></pre></div>
+      <div class='step' = data-rotate="20" data-x="0" data-y="500">
+    
+<h1>git push/pull</h1>
+<pre><code class='prettyprint bash'>$ git push 
+</code></pre>
+<h3>like svn commit</h3>
+
+<h3>it&#39;s good to update first in svn,so does git</h3>
+<pre><code class='prettyprint bash'>$ git pull  // like svn update
+</code></pre></div>
+      <div class='step' = data-rotate="20" data-x="0" data-y="600">
+    
+<h1>all these are engough</h1>
+<pre><code class='prettyprint '>git add 
+git commit / git comit -am
+git pull
+git push 
+</code></pre></div>
+      <div class='step' = data-rotate="20" data-x="0" data-y="600">
+    
+<h1>better with branch*</h1>
+
+<h2>keep master as clean as possible</h2>
+
+<h2>case 1</h2>
+
+<ol>
+<li>develope in a dev branch</li>
+<li>no body change, <code class='inline prettyprint'>git merge dev_branch</code></li>
+</ol>
+
+<h2>case 2</h2>
+
+<ol>
+<li>developein dev branch</li>
+<li>somebody update in master</li>
+<li><code class='inline prettyprint'>git rebase master</code> </li>
+<li>check all test pass.</li>
+<li><code class='inline prettyprint'>git merge dev</code></li>
+</ol>
+</div>
+      <div class='step' = data-rotate="20" data-x="0" data-y="600">
+    
+<h1>Q&amp;A</h1>
+
       </div>
     <script src="js/impress.js"></script>
     <script>impress().init();</script>
