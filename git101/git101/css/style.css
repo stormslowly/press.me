@@ -1,5 +1,5 @@
 html {
-
+	overflow: hidden;
 }
 
 body {
@@ -145,8 +145,6 @@ li {
 td,th {
 	vertical-align: top;
 	line-height: 44px;
-	border: 1px solid black;
-	padding: 3px;
 }
 
 .fallback-message {
